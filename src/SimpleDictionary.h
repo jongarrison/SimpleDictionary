@@ -8,6 +8,9 @@
 template<typename ValueType, size_t ElementSize, size_t KeySize>
 class SimpleDictionary
 {
+    static_assert(std::is_same<ElementSize, int>::value, "ElementSize must be int");
+    static_assert(std::is_same<KeySize, int>::value, "KeySize must be int");
+
 public:
     SimpleDictionary() :
         Keys{{}},
