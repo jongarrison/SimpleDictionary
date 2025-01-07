@@ -1,0 +1,26 @@
+{
+    "name": "SimpleDictionary",
+    "version": "0.0.1",
+    "description": "A very basic dictionary like tool",
+    "keywords": "Arduino, key, values, dictionary",
+    "repository":
+    {
+      "type": "git",
+      "url": ""
+    },
+    "authors":
+    [
+      {
+        "name": "jongarrison",
+        "email": "",
+        "url": "https://jongarrison.github.io",
+        "maintainer": true
+      }
+    ],
+    "license": "MIT",
+    "homepage": "",
+    "dependencies": {
+    },
+    "frameworks": "*",
+    "platforms": "*"
+  }
