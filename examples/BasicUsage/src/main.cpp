@@ -17,6 +17,7 @@ SimpleDictionary<int, 10, 20> IntDictionary;
 SimpleDictionary<float, 10, 20> FloatDictionary;
 SimpleDictionary<char*, 10, 20> CharDictionary;
 SimpleDictionary<std::array<char, 20>, 10, 20> CharArrayDictionary;
+SimpleDictionary<int, 5, 10> FillDictionary;
 
 char* floatDicName = "floats";
 char* intDicName = "ints";
@@ -25,13 +26,30 @@ char* charArrayDicName = "charArrays";
 
 void setup() {
   Serial.begin(115200);
+  while (!Serial) {
+    yield();
+  }
+  delay(1500);
+
   IntDictionary[intDicName] = 100;
-
   FloatDictionary[floatDicName] = 1.2;
-
   CharDictionary[charPointerDicName] = "CDE";
-
   sprintf(CharArrayDictionary[charArrayDicName].data(),"TestCharArray%d", millis());
+
+  Serial.println("FillDictionary demo:");
+  FillDictionary["1"] = 1;
+  Serial.println("Size:" + String(FillDictionary.size()));
+  FillDictionary["2"] = 2;
+  Serial.println("Size:" + String(FillDictionary.size()));
+  FillDictionary["3"] = 3;
+  Serial.println("Size:" + String(FillDictionary.size()));
+  FillDictionary["4"] = 4;
+  Serial.println("Size:" + String(FillDictionary.size()));
+  FillDictionary["5"] = 5;
+  Serial.println("Size:" + String(FillDictionary.size()));
+  FillDictionary["6"] = 6; //This one should not make it in
+  Serial.println("Size:" + String(FillDictionary.size()));
+
 }
 
 void loop() {
